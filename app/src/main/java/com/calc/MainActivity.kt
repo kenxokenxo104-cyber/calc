@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -50,7 +51,8 @@ fun PantallaCalculadora() {
             .background(Fondo)
             .statusBarsPadding()
             .navigationBarsPadding()
-            .padding(horizontal = 16.dp, vertical = 12.dp)
+            .padding(horizontal = 16.dp, vertical = 12.dp),
+        verticalArrangement = Arrangement.Bottom
     ) {
         Pantalla()
         Teclado()
@@ -62,7 +64,6 @@ private fun Pantalla() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .weight(1f)
             .padding(bottom = 16.dp),
         verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.End
@@ -101,7 +102,7 @@ private fun Teclado() {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f),
+                    .height(72.dp),
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 fila.forEach { etiqueta ->
